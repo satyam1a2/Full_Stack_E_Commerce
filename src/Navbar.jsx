@@ -1,3 +1,8 @@
+
+import React from "react";
+import { Link } from "react-router-dom";
+
+
 let Navbar = () => {
   return (
     <>
@@ -8,13 +13,15 @@ let Navbar = () => {
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Cart</a>
+              {/* Anchor tag refreshes our page 
+               <a href="/cart">Cart</a>  */}
+              <Link to ="/cart">Cart</Link>
             </li>
             <li>
-              <a>About</a>
+              <Link to ="/about">About</Link>
             </li>
             <li>
-              <a>Theme</a>
+              <Link to ="/theme">Theme</Link>
             </li>
 
           </ul>

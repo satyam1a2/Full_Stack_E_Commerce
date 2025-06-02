@@ -67,7 +67,7 @@ let Home = () => {
   };
 
   return (
-    <div className=" h-[91vh] w-screen flex   flex-col">
+    <div className=" h-[91vh] w-screen flex   flex-col scale-90 origin-top">
       <div className="utility flex justify-around w-100  p-3 ">
         {/* {console.log("Render called")} */}
         {/* we have to pass the refrence of the callback functionwe have to pass the refrence of the callback function */}
