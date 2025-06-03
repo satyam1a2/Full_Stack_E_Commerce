@@ -10,8 +10,8 @@ const Product = () => {
   let { id } = useParams();
 
   let obj = useCallSingleProductApi(id); // Call the custom hook to fetch product data
-  
-  if (obj == null) {
+
+  if (obj == null ) {
     return <ShimmerUI />;
   }
 
