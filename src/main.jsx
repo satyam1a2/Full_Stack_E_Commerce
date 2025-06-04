@@ -1,4 +1,4 @@
-import React from "react";
+import React, {lazy, Suspense} from "react";
 
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -9,6 +9,9 @@ import About from "./About.jsx";
 import Home from "./Home.jsx";
 import Error from "./Error.jsx";
 import Product from "./Product.jsx";
+import ShimmerUI from "./ShimmerUI.jsx";
+
+ let Food = lazy(() => import("./Food.jsx")); // Lazy loading the Food component
 
 let Router = createBrowserRouter([
   {
@@ -19,6 +22,12 @@ let Router = createBrowserRouter([
          { path: "/cart", element: <Cart /> },
          { path: "/about", element: <About /> },
          { path: "/product/:id", element: <Product /> },
+         { path: "/food", element:(
+             <Suspense fallback={<ShimmerUI />}>
+               <Food />
+             </Suspense>
+            )
+         }
          // { path: "*", element: <Error /> }  //We can write this also
       ],
       errorElement: <Error />

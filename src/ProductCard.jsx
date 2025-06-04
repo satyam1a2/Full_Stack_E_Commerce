@@ -1,14 +1,15 @@
 
-
 import {useNavigate} from "react-router-dom";
-
-
+import {useContext} from "react";
+import { ThemeStore } from "./utility/ThemeContext"; // Importing the Theme context
 
 
 
 let ProductCard = ( {obj} ) => {
     let {title, thumbnail, category, rating, price,id } = obj; // Extract id from obj
     let Navigate= useNavigate();
+
+  let { theme } = useContext(ThemeStore); 
 
   let handleClick = () => {
     //  console.log("Product is clicked");
@@ -20,8 +21,11 @@ let ProductCard = ( {obj} ) => {
     event.stopPropagation(); // Prevent the click event from bubbling up to the card
   }
 
+  let darkTheme = "card w-96 bg-base-300 shadow-xl m-4";
+  let lightTheme = "card w-96 bg-[#FFF7A8] m-4 text-black";
+
   return (
-    <div className="card w-96 bg-base-300 shadow-xl m-4" onClick={handleClick}>
+    <div className={theme === "dark" ? darkTheme : lightTheme} onClick={handleClick}>
       <figure>
         <img className="bg-zinc-400 h-[85%] rounded 2xl" src={thumbnail} alt="Shoes" />
       </figure>

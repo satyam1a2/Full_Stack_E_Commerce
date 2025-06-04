@@ -27,11 +27,11 @@ let Home = () => {
   }
 
 
-  // let darkTheme = " h-[91vh] w-screen flex   flex-col scale-90 origin-top ";
-  // let lightTheme = " h-[91vh] w-screen flex   flex-col scale-90 origin-top bg-gray-200 text-black";
+  let darkTheme = " w-screen flex   flex-col origin-top ";
+  let lightTheme = " w-screen flex flex-col origin-top bg-[#FFF9C4]  shadow-md ";
 
   return (
-    <div className=" h-[91vh] w-screen flex   flex-col scale-90 origin-top">
+    <div className={theme === "dark" ? darkTheme : lightTheme}>
       <div className="utility flex justify-around w-100  p-3 ">
         {/* {console.log("Render called")} */}
         {/* we have to pass the refrence of the callback functionwe have to pass the refrence of the callback function */}

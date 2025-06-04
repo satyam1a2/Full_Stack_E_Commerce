@@ -6,7 +6,7 @@ export let ThemeStore = createContext(null); // this is var I am storig an obj i
 
 let ThemeContext = ({ children }) => {
 
-  let [theme, setTheme] = useState("dark");
+  let [theme, setTheme] = useState( localStorage.getItem("Theme")  ); // default theme is light
 
 
   return (
