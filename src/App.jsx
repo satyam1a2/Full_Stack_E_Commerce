@@ -3,19 +3,19 @@ import Home from './Home.jsx';
 import Navbar from './Navbar.jsx';
 import ShimmerUI from './ShimmerUI.jsx';
 import {Outlet} from 'react-router-dom';
-import ThemeContext from './utility/ThemeContext.jsx';
+import ThemeContextProvider from './utility/ThemeContexProvider.jsx';
 
 
 function App(){
   return(
     <>
-        <ThemeContext>
+        <ThemeContextProvider>
 
           <Navbar> </Navbar>
           <Outlet></Outlet>
           {/* <ShimmerUI></ShimmerUI> */}
-          
-        </ThemeContext>
+
+        </ThemeContextProvider>
     </>
   )
 }

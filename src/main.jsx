@@ -10,6 +10,8 @@ import Home from "./Home.jsx";
 import Error from "./Error.jsx";
 import Product from "./Product.jsx";
 import ShimmerUI from "./ShimmerUI.jsx";
+import appStore from "./utility/Store/Store.js";
+import { Provider } from "react-redux";
 
  let Food = lazy(() => import("./Food.jsx")); // Lazy loading the Food component
 
@@ -24,7 +26,7 @@ let Router = createBrowserRouter([
          { path: "/product/:id", element: <Product /> },
          { path: "/food", element:(
              <Suspense fallback={<ShimmerUI />}>
-               <Food />
+                 <Food />
              </Suspense>
             )
          }

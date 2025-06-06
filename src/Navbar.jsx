@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {useContext} from "react";
-import { ThemeStore } from "./utility/ThemeContext"; // Importing the Theme context
+import { ThemeContext } from "./utility/ThemeContext"; // Importing the Theme context
 
 
 let Navbar = () => {
 
-  let {theme, setTheme} = useContext(ThemeStore); // Using useContext to access the theme context
+  let {theme, setTheme} = useContext(ThemeContext); // Using useContext to access the theme context
 
   let darkTheme= 'navbar bg-base-300 ';
   let lightTheme= 'navbar bg-[#FFE97F] shadow-md text-black';

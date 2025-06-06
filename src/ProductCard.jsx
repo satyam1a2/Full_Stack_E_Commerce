@@ -1,15 +1,15 @@
 
 import {useNavigate} from "react-router-dom";
 import {useContext} from "react";
-import { ThemeStore } from "./utility/ThemeContext"; // Importing the Theme context
-
+import { ThemeContext } from "./utility/ThemeContext"; // Importing the Theme context
+import { useDispatch } from "react-redux";
 
 
 let ProductCard = ( {obj} ) => {
     let {title, thumbnail, category, rating, price,id } = obj; // Extract id from obj
     let Navigate= useNavigate();
 
-  let { theme } = useContext(ThemeStore); 
+  let { theme } = useContext(ThemeContext); 
 
   let handleClick = () => {
     //  console.log("Product is clicked");
