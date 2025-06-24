@@ -13,7 +13,8 @@ import ShimmerUI from "./ShimmerUI.jsx";
 import appStore from "./utility/Store/Store.js";
 import { Provider } from "react-redux";
 
- let Food = lazy(() => import("./Food.jsx")); // Lazy loading the Food component
+
+let Food = lazy(() => import("./Food.jsx")); // Lazy loading the Food component
 
 let Router = createBrowserRouter([
   {
@@ -58,5 +59,7 @@ let Router = createBrowserRouter([
 // )
 
 ReactDOM.createRoot(document.getElementById("root")).render(
+   <Provider store={appStore}>
    <RouterProvider router={Router} > </RouterProvider>
+   </Provider>
 );
